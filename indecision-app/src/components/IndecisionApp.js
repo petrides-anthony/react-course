@@ -63,23 +63,25 @@ export default class IndecisionApp extends React.Component {
         console.log('componentWillUnmount!')
     };
     render() {
-        const subtitle = 'Putt your life in the hands of a computer';
+        const subtitle = 'Put your life in the hands of a computer';
 
         return (
             <div>
                 <Header subtitle={subtitle}/>
-                <Action 
-                    hasOptions={this.state.options.length > 0}
-                    handlePick={this.handlePick}
-                />
-                <Options 
-                    options={this.state.options} 
-                    handleDeleteOptions={this.handleDeleteOptions}
-                    handleDeleteOption={this.handleDeleteOption}
-                />
-                <AddOption 
-                    handleAddOption={this.handleAddOption}
-                />
+                <div className="container">
+                    <Action 
+                        hasOptions={this.state.options.length > 0}
+                        handlePick={this.handlePick}
+                    />
+                    <Options 
+                        options={this.state.options} 
+                        handleDeleteOptions={this.handleDeleteOptions}
+                        handleDeleteOption={this.handleDeleteOption}
+                    />
+                    <AddOption 
+                        handleAddOption={this.handleAddOption}
+                    />
+                </div>
                 <OptionModal 
                     selectedOption={this.state.selectedOption}
                     handleClearSelectedOption={this.handleClearSelectedOption}
